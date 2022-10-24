@@ -1,3 +1,10 @@
+{% load static %}
+
+    <head>
+        <title>{{ question.question_text }}</title>
+        <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    </head>
 
 <form action="{% url 'polls:vote' question.id %}" method="post">
 {% csrf_token %}
